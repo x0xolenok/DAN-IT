@@ -5,9 +5,8 @@
 # a. Чи був професор Грубл послідовним у проставленні позначки "Passed" для студентів.
 # b. Якщо професор Грубл був послідовним, виведіть діапазон у якому знаходиться поріг для складання іспиту.
 
-# Вхідні дані
-grades = [84, 78, 65, 90, 72]
-results = ["Passed", "Passed", "Failed", "Passed", "Failed"]
+grades = [70, 70, 70]
+results = ["Passed", "Failed", "Passed"]
 
 passed_scores = []
 failed_scores = []
@@ -18,16 +17,21 @@ for i in range(len(grades)):
     else:
         failed_scores.append(grades[i])
 
+# Перевірка послідовності
 consistent = True
 for p in passed_scores:
     for f in failed_scores:
-        if p < f:
+        if p <= f:  # якщо хоча б один склав з гіршим або рівним балом
             consistent = False
 
 if not consistent:
     print("Професор був непослідовний")
 else:
-    min_passed = min(passed_scores)
-    max_failed = max(failed_scores)
     print("Професор був послідовний")
-    print("Поріг складання іспиту знаходиться в діапазоні:", max_failed + 1, "-", min_passed)
+    # Діапазон прохідного балу можна обчислити лише якщо є обидві групи
+    if passed_scores and failed_scores:
+        min_passed = min(passed_scores)
+        max_failed = max(failed_scores)
+        print("Поріг складання іспиту знаходиться в діапазоні:", max_failed + 1, "-", min_passed)
+    else:
+        print("Недостатньо даних для визначення порогу (усі склали або усі не склали)")
