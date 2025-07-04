@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2025-07-02T21:24:29.315254",
+    "amount": 10000.0,
+    "from_currency": "USD",
+    "to_currency": "UAH",
+    "result": 420097.0
+  },
+  {
+    "timestamp": "2025-07-02T21:33:10.250844",
+    "amount": 1000.0,
+    "from_currency": "USD",
+    "to_currency": "UAH",
+    "result": 42009.7
+  }
+]
