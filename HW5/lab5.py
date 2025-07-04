@@ -68,6 +68,5 @@ def show_weather():
     print("\nShort Summary:")
     print(weather)
 
-
 if __name__ == "__main__":
     show_weather()
