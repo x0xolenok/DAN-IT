@@ -45,19 +45,25 @@ print(reversed_num if valid_number else "Please, enter a valid number.(without 0
 #
 # f. True, якщо перше число більше або дорівнює другому, інакше False.
 
-num1 = int(input("Введіть перше число:"))
-num2 = int(input("Введіть друге число:"))
+num1 = int(input("Введіть перше число: "))
+num2 = int(input("Введіть друге число: "))
 
-sum = num1+num2
-diff = num1-num2
-mult = num1*num2
-div = num1//num2
-remainder = num1%num2
-comparison = num1>=num2
+sum = num1 + num2
+diff = num1 - num2
+mult = num1 * num2
+comparison = num1 >= num2
 
 print("Сума:", sum)
 print("Різниця:", diff)
 print("Добуток:", mult)
-print("Ділення:", div)
-print("Залишок від ділення:", remainder)
-print("Перше число більше другого?:", comparison)
+
+if num2 != 0:
+    div = num1 // num2
+    remainder = num1 % num2
+    print("Ділення:", div)
+    print("Залишок від ділення:", remainder)
+else:
+    print("Ділення: неможливо (ділення на нуль)")
+    print("Залишок від ділення: неможливо (ділення на нуль)")
+
+print("Перше число більше або дорівнює другому?:", comparison)
